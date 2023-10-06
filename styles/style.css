@@ -1,0 +1,88 @@
+*{
+    font-family: sans-serif;
+    color:aliceblue;
+    font-size: 15px;
+}
+
+body{
+    margin: 0;
+    background-image: url(/assets/1318918.jpeg);
+    background-size:cover;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.calculator{
+    width: 90%;
+    max-width: 330px;
+    background-color: #1f1d1df7;
+    border-radius: 1px;
+    box-shadow: 10px 5px 0px 0px #1a274fb5;
+}
+
+header{
+    margin-left: 15px;
+}
+
+.display{
+    text-align: right;
+    background-color: #242222c9;
+    height: 60px;
+    padding: 20px;
+    margin-bottom: 5px;
+    height: 100px;
+}
+
+.value{
+    font-size: 25px;
+    margin-top: 20px;
+}  
+
+.prevalue{
+    font-size: 15px;
+    color: #bcb6b6e4;
+}
+
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+button{
+    height: 50px;
+    margin: 1px;
+    border-radius: 3px;
+    cursor:pointer;
+    border:none;
+    display: inline-block;
+}
+
+button:hover{
+    background-color: #a2a4a7c0;
+}
+
+button:active{
+    background-color: #53515152;
+}
+
+.operator {
+    background-color: #7c797952;
+}
+
+.number {
+    background-color: #686565ab;
+}
+
+.equals{
+    background-color: #5c6ab4de;
+}
+
+.equals:hover{
+    background-color: #7581c5da;
+}
