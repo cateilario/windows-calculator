@@ -21,13 +21,45 @@ body{
 .calculator{
     width: 90%;
     max-width: 330px;
+    padding: 5px;
     background-color: #1f1d1df7;
     border-radius: 1px;
     box-shadow: 10px 5px 0px 0px #1a274fb5;
 }
 
 header{
-    margin-left: 15px;
+    margin-left: 20px;
+}
+
+img{
+    height: 15px;
+    width: 15px;
+}
+
+.title{
+    display: flex;
+    width: 100%;
+}
+
+.button-menu {
+    width: 16px;
+    height: 16px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 10px 0 -5px;
+}
+
+.button-menu span {
+    width: 15px;
+    height: 1px;
+    background: #b8adad;
+    border-radius: 2px;
+    margin-bottom: 3px;
 }
 
 .display{
@@ -36,7 +68,6 @@ header{
     height: 60px;
     padding: 20px;
     margin-bottom: 5px;
-    height: 100px;
 }
 
 .value{
