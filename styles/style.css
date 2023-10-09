@@ -20,9 +20,9 @@ body{
 
 .calculator{
     width: 90%;
-    max-width: 330px;
+    max-width: 320px;
     padding: 5px;
-    background-color: #1f1d1df7;
+    background-color: #1f1e1efa;
     border-radius: 1px;
     box-shadow: 10px 5px 0px 0px #1a274fb5;
 }
@@ -31,20 +31,26 @@ header{
     margin-left: 15px;
 }
 
-img{
-    height: 16px;
-    width: 16px;
-    margin: 3px 10px 5px -10px;
-}
-
 .title1{
     display:flex;
-    margin: 8px;
+    margin: 6px;
+}
+
+.calculator-img{
+    height: 16px;
+    width: 16px;
+    margin: 0 10px 5px -8px;
+}
+
+span{
+    font-size: 12px;
 }
 
 .title2{
     display: flex;
     width: 100%;
+    justify-content:space-between;
+    height: 20px;
 }
 
 .button-menu {
@@ -57,7 +63,7 @@ img{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin: 0 10px 0 -5px;
+    margin-right:-180px;
 }
 
 .button-menu span {
@@ -68,22 +74,39 @@ img{
     margin-bottom: 3px;
 }
 
+.fa-clock-rotate-left{
+    margin-right:12px;
+    background-color: #1f1e1efa;
+    
+}
+
 .display{
     text-align: right;
-    background-color: #242222c9;
+    background-color: #201f1ffa;
     height: 60px;
     padding: 20px;
     margin-bottom: 5px;
 }
 
 .value{
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 20px;
 }  
 
 .prevalue{
     font-size: 15px;
     color: #bcb6b6e4;
+}
+
+.memory-btns{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-around;
+}
+
+.m-btn{
+    font-size: 13px;
 }
 
 .keys{
@@ -109,17 +132,21 @@ button:active{
 }
 
 .operator {
-    background-color: #7c797952;
+    background-color: #5e5b5b52;
+}
+
+.fa-solid{
+    background-color: #5e5b5b52;
 }
 
 .number {
     background-color: #686565ab;
 }
 
-.equals{
+.fa-equals{
     background-color: #5c6ab4de;
 }
 
-.equals:hover{
+.fa-equals:hover{
     background-color: #7581c5da;
 }
