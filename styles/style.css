@@ -6,7 +6,7 @@
 
 body{
     margin: 0;
-    background-image: url(/assets/1318918.jpeg);
+    background-image: url(/assets/windows.jpeg);
     background-size:cover;
 }
 
@@ -28,15 +28,21 @@ body{
 }
 
 header{
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 img{
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
+    margin: 3px 10px 5px -10px;
 }
 
-.title{
+.title1{
+    display:flex;
+    margin: 8px;
+}
+
+.title2{
     display: flex;
     width: 100%;
 }
