@@ -104,7 +104,7 @@ const squareFunction = document.getElementById("square-btn")
 
 const sqrtFunction = document.getElementById("sqrt-btn")
 sqrtFunction.addEventListener ('click', () => {
-    result = Math.sqrt(parseFloat(inputValue), 2)
+    result = Math.sqrt(parseFloat(inputValue));
     mainDisplay.textContent = result;
     operationDisplay.textContent = `√(${inputValue})`
     inputValue = result;
