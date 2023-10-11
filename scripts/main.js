@@ -98,7 +98,7 @@ const squareFunction = document.getElementById("square-btn")
            mainDisplay.innerText = previousValue;
            operationDisplay.innerText = previousValue;
         } else{
-            mainDisplay.innerHTML = "Error";
+            mainDisplay.innerHTML = "Error"; 
         }
 });
 
