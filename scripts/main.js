@@ -1,3 +1,10 @@
+/**
+ * @author Caterina Ilario Paz
+ * @github https://github.com/cateilario/windows-calculator.git
+ */
+
+document.addEventListener("DOMContentLoaded", () =>{
+
 let mainDisplay = document.getElementById("value")
 let operationDisplay = document.getElementById("prevalue")
 
@@ -150,3 +157,4 @@ deleteInput.addEventListener ("click", () => {
     mainDisplay.textContent= inputValue;
 });
 
+});
