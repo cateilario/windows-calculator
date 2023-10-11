@@ -10,6 +10,7 @@ let result = undefined;
 const appendNumber = document.querySelectorAll('#number');
 appendNumber.forEach(number => {
     number.addEventListener("click", () =>{
+
     if(number.innerText === '.' && !haveDot){
         haveDot = true;
     }else if(number.innerText === '.' && haveDot){
@@ -123,6 +124,7 @@ percentageFunction.addEventListener ('click', () => {
     result = inputValue / 100;
     mainDisplay.innerText = result;
     operationDisplay.textContent = result;
+    inputValue = result;
 });
 
 const resetDisplay = document.getElementById("reset-btn")
