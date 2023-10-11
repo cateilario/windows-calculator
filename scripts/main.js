@@ -11,15 +11,15 @@ let result = undefined;
 const appendNumber = document.querySelectorAll('#number');
 appendNumber.forEach(number => {
     number.addEventListener("click", () =>{
-        if (operationDone)
-            mainDisplay.textContent = '';
-            operationDone = false;
+    if (operationDone)
+        mainDisplay.textContent = '';
+        operationDone = false;
         
-        if(number.textContent === '.' && !haveDot){
-            haveDot = true;
-        }else if(number.textContent === '.' && haveDot){
-            return;
-        }
+    if(number.textContent === '.' && !haveDot){
+        haveDot = true;
+    }else if(number.textContent === '.' && haveDot){
+        return;
+    }
     inputValue += number.textContent;
     mainDisplay.textContent=inputValue;
     operationDisplay.textContent = previousValue;
@@ -94,29 +94,40 @@ equalsButton.addEventListener("click", () =>{
 
 const squareFunction = document.getElementById("square-btn")
     squareFunction.addEventListener ('click', () => {
-    inputValue = mainDisplay.textContent;
-    mainDisplay.textContent = Math.pow(parseFloat(mainDisplay.textContent), 2);    
-    operationDisplay.textContent = `sqr(${inputValue})`;
-    
+    result = Math.pow(parseFloat(inputValue), 2)
+    mainDisplay.textContent = result;
+    operationDisplay.textContent = `sqr(${inputValue})`
     operationDone = true;
 });
 
 const sqrtFunction = document.getElementById("sqrt-btn")
-    sqrtFunction.addEventListener ('click', () => {
-        inputValue = mainDisplay.textContent;
-        mainDisplay.textContent = Math.sqrt(parseFloat(mainDisplay.textContent), 2);    
-        operationDisplay.textContent = `√(${inputValue})`;
-    
-        operationDone = true;
-         
+sqrtFunction.addEventListener ('click', () => {
+    result = Math.sqrt(parseFloat(inputValue), 2)
+    mainDisplay.textContent = result;
+    operationDisplay.textContent = `√(${inputValue})`
+    operationDone = true;
 });
 
 const inverseBtn = document.getElementById("inverse");
-    inverseBtn.addEventListener("click", () => {
-        result = 1/ inputValue;
-        mainDisplay.textContent = result;
-        operationDisplay.textContent = `1/(${inputValue})`
-    });
+inverseBtn.addEventListener("click", () => {
+    result = 1/ parseFloat(inputValue);
+    mainDisplay.textContent = result;
+    operationDisplay.textContent = `1/(${inputValue})`
+});
+
+const toggleSign = document.getElementById("toggle-sign");
+toggleSign.addEventListener ('click', () => {
+    result = parseFloat(inputValue) * (-1);
+    mainDisplay.textContent = result
+    operationDisplay.textContent = `negate(${inputValue}) `
+});
+    
+const percentageFunction = document.getElementById("percentage-btn");
+percentageFunction.addEventListener ('click', () => {
+    result = inputValue / 100;
+    mainDisplay.innerText = result;
+    operationDisplay.textContent = result;
+});
 
 const resetDisplay = document.getElementById("reset-btn")
 resetDisplay.addEventListener ('click', () =>{
@@ -140,15 +151,3 @@ deleteInput.addEventListener ("click", () => {
     mainDisplay.textContent= inputValue
 });
 
-const toggleSign = document.getElementById("toggle-sign");
-toggleSign.addEventListener ('click', () => {
-    
-});
-
-const percentageFunction = document.getElementById("percentage-sign");
-percentageFunction.addEventListener ('click', () => {
-    if(!previousValue && lastOperation === ''){
-        previousValue = previousValue / 100;
-        operationDisplay.textContent = previousValue;
-    }
-});
