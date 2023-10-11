@@ -40,6 +40,7 @@ operationBtns.forEach(operator => {
         clearVar (operation);
         lastOperation = operation;
         console.log(result)
+    operationDone = false;
 })
 });
 
@@ -53,9 +54,7 @@ const clearVar = (name = '') => {
 const calculate = () => {
     let number1 = parseFloat(result);
     let number2 = parseFloat(inputValue);
-    if(isNaN(number1) || isNaN(number2)) {
-        result= "Error";
-      } else {
+    if(!isNaN(number1) && !isNaN(number2) && lastOperation !== "") {
         switch (lastOperation){
             case '+':
                 result = number1 + number2;
@@ -75,6 +74,8 @@ const calculate = () => {
                     }
                 break;     
     }
+    } else {
+        result = `Error`
     }
 }
 
@@ -87,37 +88,34 @@ equalsButton.addEventListener("click", () =>{
     mainDisplay.innerText = result;
     inputValue = result;
     previousValue = '';
+    lastOperation = '';
     operationDone = true;
 });
 
 const squareFunction = document.getElementById("square-btn")
-    squareFunction.addEventListener ('click', (e) => {
-        if (operator === ''){
-           inputValue = Math.pow(parseFloat(previousValue), 2);
-           previousValue = result;
-           mainDisplay.innerText = previousValue;
-           operationDisplay.innerText = previousValue;
-        } else{
-            mainDisplay.innerHTML = "Error"; 
-        }
+    squareFunction.addEventListener ('click', () => {
+    inputValue = mainDisplay.textContent;
+    mainDisplay.textContent = Math.pow(parseFloat(mainDisplay.textContent), 2);    
+    operationDisplay.textContent = `sqr(${inputValue})`;
+    
+    operationDone = true;
 });
 
 const sqrtFunction = document.getElementById("sqrt-btn")
     sqrtFunction.addEventListener ('click', () => {
-            mainDisplay.textContent = Math.sqrt(previousValue);
-            previousValue = result;
-            mainDisplay.innerText = previousValue;
-            operationDisplay.innerText = previousValue;
+        inputValue = mainDisplay.textContent;
+        mainDisplay.textContent = Math.sqrt(parseFloat(mainDisplay.textContent), 2);    
+        operationDisplay.textContent = `√(${inputValue})`;
+    
+        operationDone = true;
          
 });
 
 const inverseBtn = document.getElementById("inverse");
     inverseBtn.addEventListener("click", () => {
-        if(inputValue !== 0 && operationDone){
-            result = 1/ previousValue;
-            previousValue = result;
-        }
-        mainDisplay.textContent = "Error"
+        result = 1/ inputValue;
+        mainDisplay.textContent = result;
+        operationDisplay.textContent = `1/(${inputValue})`
     });
 
 const resetDisplay = document.getElementById("reset-btn")
@@ -145,4 +143,12 @@ deleteInput.addEventListener ("click", () => {
 const toggleSign = document.getElementById("toggle-sign");
 toggleSign.addEventListener ('click', () => {
     
+});
+
+const percentageFunction = document.getElementById("percentage-sign");
+percentageFunction.addEventListener ('click', () => {
+    if(!previousValue && lastOperation === ''){
+        previousValue = previousValue / 100;
+        operationDisplay.textContent = previousValue;
+    }
 });

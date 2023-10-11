@@ -78,7 +78,7 @@ button.fa-clock-rotate-left{
 .display{
     text-align: right;
     background-color: #1f1e1efa;
-    height: 60px;
+    min-height: 70px;
     padding: 20px;
     margin-bottom: 5px;
     word-wrap: break-word;
