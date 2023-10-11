@@ -1,1 +1,3 @@
-Práctica 1 DWEC Y DIW - Calculadora básica Windows con tecnologías HTML5, CSS3 y JavaScript
+# Recreating Windows Calculator with HTML5, CSS3 and JavaScript technologies
+
+**Caterina Ilario**
