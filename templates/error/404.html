@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error!</title>
+    <style>
+        body{
+            background-color: #dda7a4;
+        }
+
+        section{
+            margin: 60px auto;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #626161;
+            width: 60%;
+            min-height: 20rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1%;
+            overflow: hidden;
+        }
+
+        .window-header{
+            align-self: stretch;
+            min-height: 1.6rem;
+            background-color: #38393b;
+            border-radius: 1%;
+            display:flex;
+            align-items: flex-start;
+            justify-content: left;
+        }
+
+        button {
+            border-radius: 50%;
+            height: .7rem;
+            width: .7rem;
+            border: none;
+            margin-top: .4rem;
+            margin-left: .4rem;
+        }
+
+        .close {
+            background-color: #ff5f56;
+            }
+
+        .minimize {
+            background-color: #ffbd2e;
+        }
+
+        .maximize {
+            background-color:  #4cd964;
+        }
+
+        .error-content {
+            margin: 2rem;
+        }
+        
+        .error-content h1{
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        .error-content p{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.5rem;
+        }
+
+        img{
+        animation: shake-baidu 2s ease 0s infinite;
+        }
+
+        @keyframes shake-baidu {
+            from    { transform: rotate(0deg); }
+            4%      { transform: rotate(5deg); }
+            12.5%   { transform: rotate(-5deg); }
+            21%     { transform: rotate(5deg); }
+            29%     { transform: rotate(-5deg); }
+            37.5%   { transform: rotate(5deg); }
+            46%     { transform: rotate(-5deg); }
+            50%,to  { transform: rotate(0deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="window-header">
+            <button class="close"></button>
+            <button class="minimize"></button>
+            <button class="maximize"></button>
+        </div>
+        <div class="error-content">
+            <h1>¡Error 404! <br/> RUTA NO ENCONTRADA</h1>
+            <p>Puede que prefieras introducir otra ruta...</p>
+            <img src="404.png" alt="Imagen de monigote dudando" class="img">
+        </div>
+    </section>
+</body>
+</html>
