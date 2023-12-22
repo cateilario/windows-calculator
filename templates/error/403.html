@@ -3,76 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso denegado</title>
+    <title> 403 Error!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
-        html,
         body{
+            background-image: url(/assets/25336.jpg);
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Vina Sans', sans-serif; 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            opacity: .9;
         }
 
-        *{
-            box-sizing: border-box;
-        }
-
-        *::before, *::after{
-            box-sizing: border-box;
-        }
-
-        h1{
-            font-size: 6rem;
-        }
-
-        .app{
-            padding: 1rem;
+        section{
+            margin: 60px auto;
+            text-align: center;
+            background-color: #bbb8b8fd;
+            width: 60%;
+            min-height: 20rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            background-color: #1b1b1b;
-            font-size: 6rem;    
-            color: greenyellow;
-            text-shadow: 20px -40px 2px;
             flex-direction: column;
+            border-radius: 1%;
+            overflow: hidden;
         }
 
-        .app .txt{
-            font-size: 1.8rem;
+        .window-header{
+            align-self: stretch;
+            min-height: 1.6rem;
+            background-color: #38393b;
+            border-radius: 1%;
+            display:flex;
+            align-items: flex-start;
+            justify-content: left;
         }
 
-        @keyframes blink {
+        button {
+            border-radius: 50%;
+            height: .7rem;
+            width: .7rem;
+            border: none;
+            margin-top: .4rem;
+            margin-left: .4rem;
+        }
+
+        .close {
+            background-color: #ff5f56;
+            }
+
+        .minimize {
+            background-color: #ffbd2e;
+        }
+
+        .maximize {
+            background-color:  #4cd964;
+        }
+
+        .error-content {
+            margin: 1rem;
+            
+        }
+        
+        .error-content h1{
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: #b30c0c;
+        }
+
+        .error-content p:first-of-type {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 2rem;
+            color: black;
+        }
+
+        .error-content p{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            color: black;
+        }
+
+        img{
+        animation: zoom 2s 4s infinite;
+        }
+
+        @keyframes zoom {
         0% {
-            opacity: 0;
-        }
-        49% {
-            opacity: 0;
-            transform: translate(-2.5rem, 0) rotate(0deg);
+            transform: scale(1);
         }
         50% {
-            opacity: 1;
-            position: fixed;
+            transform: scale(1.5); /* Zoom al 150% */
         }
         100% {
-            opacity: 1;
-            transform: translate(-20rem, 0);
+            transform: scale(1);
         }
-        }
-
-        .blink{
-            animation: blink 4s infinite;
         }
 
     </style>
-
 </head>
 <body>
-    <div class="app">
-       <h1>403</h1> 
-       <div class="txt">Acceso Prohibido <span class="blink">_</span></div>
-    </div>   
+    <section>
+        <div class="window-header">
+            <button class="close"></button>
+            <button class="minimize"></button>
+            <button class="maximize"></button>
+        </div>
+        <div class="error-content">
+            <h1>¡Error 403!</h1>
+            <p>ACCESO PROHIBIDO</p>
+            <p>Lo siento, pero no tiene permisos para acceder a la ruta seleccionada. Pruebe otra cosa...</p>
+            <img src="/assets/403.png" width="200" height="200" alt="Imagen de calculadora" class="img">
+        </div>
+    </section>
 </body>
 </html>
